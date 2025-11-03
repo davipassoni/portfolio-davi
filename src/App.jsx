@@ -6,19 +6,20 @@ function App() {
 
   return (
     <>
-    <nav> classname={ styles.menu    }
-      
+    <nav classname={ styles.menu}>
+    
     <a href="#s1">home</a>
     <a href="#s2">cards</a>
     <a href="#s3">video</a>
     <a href="#s4">contato</a>
     </nav>
     <main>
+      
     <section id="s1">
       <h1>sessao 1</h1>
     </section>
    <section id="s2">
-      <h2>sessao 2</h2>
+      <h2>sessao2</h2>
     </section>
     <section id="s3">
       <h3>sessao 3</h3>
