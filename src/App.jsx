@@ -14,16 +14,16 @@ function App() {
     <a href="#s4">contato</a>
     </nav>
     <main>
-    <section>
+    <section id="s1">
       <h1>sessao 1</h1>
     </section>
-    <section>
+   <section id="s2">
       <h2>sessao 2</h2>
     </section>
-    <section>
+    <section id="s3">
       <h3>sessao 3</h3>
     </section>
-    <section>
+   <section id="s4">
       <h4>sessao 4</h4>
     </section>
 
