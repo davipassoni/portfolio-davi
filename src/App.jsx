@@ -10,7 +10,35 @@ import js from '../public/OIP (12).webp'
 import vite from '../public/vite-js-4096-logo.png'
 import verce from '../public/vercel1868.jpg'
 import react  from '../public/OIP (13).webp'
+
+
+import { useState } from 'react'
+
 function App() {
+    const defaultPhoneNumber = '5541995223450'
+
+  
+  const [formData, setFormData] = useState({
+    name:'',
+    email:'',
+    message:'',
+  })
+
+  const handleChange = (event) =>{
+    const{name, value} = event.target
+    setFormData({...formData, [name]:value})
+ }
+
+ const handZap= () =>{
+   const{name, email, message} = formData
+
+   const urlzap = `https://api.whatsapp.com/send?phone=${defaultPhoneNumber}&text=
+   Nome:${name}%0D%0A
+   Email:%20${email}%0D%0A
+   Mensagem:%20${message}%0D%0A`
+
+   window.open(urlzap, "_blank")
+ }
 
 //javascript
   return (
@@ -92,9 +120,18 @@ Trabalho com atenção aos detalhes e busco sempre aplicar boas práticas de pro
          <h2>sessao 3</h2>
          </section>
 
-          <section id='s4'>
-          <h2>sessao 4</h2>
-          </section>
+         <section id='s4'className={style.s4}>
+          <h2>CONTATO</h2>
+          <div className={style.formData}>
+            <label htmlFor="name">Informe seu nome</label>
+            <input type="text" id='name' name='name' value={formData.name} onChange={handleChange} required/>
+            <label htmlFor="email">imporme seu email</label>
+            <input type="email" id='email' name='email' value={formData.email} onChange={handleChange} required/>
+            <label htmlFor="message">informe uma mensagem</label>
+            <textarea name="message"id="message" value={formData.massage} onChange={handleChange} cols="30" raws="10" required/>
+            <button onClick={handZap}>Enviar mensagem</button>
+          </div>
+        </section>
 
       </main>
       <footer className={style.rodape} >
